@@ -34,3 +34,16 @@ predict(simp,new,se.fit=TRUE)
 ```
 ## Surely there is another variable that can better predict LENGTH than NECK. Find one and compare its performance to that of neck by it value of Adjusted-Rsquared (bigger is better).
 
+```{r}
+pairs(bears)
+```
+
+```{r}
+hlen <- lm(LENGTH~HEADLEN,data=bears)
+plot(LENGTH~HEADLEN,data=bears)
+abline(hlen)
+summary.lm(hlen)
+```
+
+## Conclusions  
+We found a variable that is better of predicting the length of the bear by using the variable HEADLEN, and comparing the adjusted R-squared value of 0.8463 which is bigger than the original R-squared value which was 0.07476. The bigger the number, the better variable it is.   
